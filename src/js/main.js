@@ -19,9 +19,9 @@ $(document).ready(function(){
 
     function processData(data){
 	var objects = data.objects;
+	console.log(objects);
 	for(var i = 0; i<objects.length; i++){
 	    var object = objects[i];
-	    console.log(object);
 	}
 	var storyKey = getStoryKey();
 	console.log(storyKey);
