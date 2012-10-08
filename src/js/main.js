@@ -1,27 +1,14 @@
-function getParameterByName(name)
-{
-    //sourced from stack overflow
-    name = name.replace(/[\[]/, "\\\[").replace(/[\]]/, "\\\]");
-    var regexS = "[\\?&]" + name + "=([^&#]*)";
-    var regex = new RegExp(regexS);
-    var results = regex.exec(window.location.search);
-    if(results == null)
-	return "";
-    else
-      return decodeURIComponent(results[1].replace(/\+/g, " "));
-}
-
 
 $(document).ready(function(){
     var templates = {};
     templates.list = new EJS({url: 'templates/list.ejs'});
     templates.story = new EJS({url: 'templates/story.ejs'});
-
+    var stories = [];
     function processData(data){
-	var objects = data.objects;
-	console.log(objects);
-	for(var i = 0; i<objects.length; i++){
-	    var object = objects[i];
+	stories = data.objects;
+	console.log(stories);
+	for(var i = 0; i<stories.length; i++){
+	    var object = stories[i];
 	}
 	var storyKey = getStoryKey();
 	console.log(storyKey);
@@ -32,8 +19,14 @@ $(document).ready(function(){
 	}
     }
     
-    function showStory(){
+    function showStory(storyKey){
+	var index = storyKeyToIndex(storyKey);
+	var story = stories[index];
+	console.log(story);
+    }
 
+    function storyKeyToIndex(storyKey){
+	return Number(strReplace('sto', '', storyKey))-1;
     }
 
     function showList(){
