@@ -1,9 +1,19 @@
+a{
+      color:#0080BB;
+      text-decoration:none;      
+}
+
+body{
+	font:arial,sans-serif;
+}
+
+
 .list{
 	display:table;
 }
 .list .story{
       display:table-row;
-      color:#888888;
+      color:#555555;
       margin-bottom:1em;
 }
 .list .story .thumb-wrapper, .list .story .text-data{
