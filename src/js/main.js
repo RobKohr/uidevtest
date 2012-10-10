@@ -31,7 +31,12 @@ $(document).ready(function(){
 
     function formatDate(dateString){
 	var d = new Date(dateString);
-	return dateString;//needs to be modified
+	var out=
+	    moment(d).format(
+		"h:mm a dddd, MMM, D, YYYY");
+	out = strReplace('am', 'a.m.', out);
+	out = strReplace('pm', 'p.m.', out);
+	return out;
     }
     function showList(){
 	var content = templates.list.render({stories:stories, formatDate:formatDate});
