@@ -29,8 +29,13 @@ $(document).ready(function(){
 	return Number(strReplace('sto', '', storyKey))-1;
     }
 
+    function formatDate(dateString){
+	var d = new Date(dateString);
+	return dateString;//needs to be modified
+    }
     function showList(){
-
+	var content = templates.list.render({stories:stories, formatDate:formatDate});
+	$('#content').html(content);
     }
 
     function getStoryKey(){

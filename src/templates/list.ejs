@@ -1,1 +1,26 @@
-List
+<div class="list">
+<% for(var i = 0; i<stories.length; i++) {%>
+  <% var story = stories[i]; %>
+  <div class="story">
+    <img class="thumb" src="<%=story.lead_photo_image_thumb%>">
+    <div class="text-data">
+      <h3>
+        <a class="title" href="?story=sto<%=i+1%>">
+      	  <%=story.title%>
+	</a>
+      </h3>
+      <div class="categories">
+        <%=story.categories_name.join(', ')%>
+      </div>
+      <div class="date-info">
+        <div class="posted">
+	     Posted: <%=formatDate(story.pub_date)%>  
+      	</div>
+	<div class="updated">
+	     Updated: <%=formatDate(story.updated)%>
+	</div>
+      </div>      
+    </div>
+  </div>
+<% } %>
+</div>
