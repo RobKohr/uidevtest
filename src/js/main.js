@@ -41,6 +41,7 @@ $(document).ready(function(){
     function showList(){
 	var content = templates.list.render({stories:stories, formatDate:formatDate});
 	$('#content').html(content);
+	$('.list .story .thumb').dropShadow();
     }
 
     function getStoryKey(){
