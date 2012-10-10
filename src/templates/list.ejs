@@ -2,7 +2,9 @@
 <% for(var i = 0; i<stories.length; i++) {%>
   <% var story = stories[i]; %>
   <div class="story">
-    <img class="thumb" src="<%=story.lead_photo_image_thumb%>">
+    <div class="thumb-wrapper">
+        <img class="thumb" src="<%=story.lead_photo_image_thumb%>">
+    </div>
     <div class="text-data">
       <h3>
         <a class="title" href="?story=sto<%=i+1%>">

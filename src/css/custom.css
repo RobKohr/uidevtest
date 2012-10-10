@@ -1,5 +1,22 @@
-.list .story .thumb{
-      float:left;
+.list{
+	display:table;
+}
+.list .story{
+      display:table-row;
+      color:#888888;
+      margin-bottom:1em;
+}
+.list .story .thumb-wrapper, .list .story .text-data{
+      display:table-cell;
+      vertical-align:top;
+      padding:0.5em;
+}
+.list .story .thumb-wrapper{
       /* drop shadow added in main.js */
+}
+
+.list h3{
+      padding:0px;
+      margin:0px;
 }
 
