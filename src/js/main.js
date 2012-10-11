@@ -22,7 +22,8 @@ $(document).ready(function(){
     function showStory(storyKey){
 	var index = storyKeyToIndex(storyKey);
 	var story = stories[index];
-	console.log(story);
+	var content = templates.story.render({story:story});
+	$('#content').html(content);	
     }
 
     function storyKeyToIndex(storyKey){
@@ -42,6 +43,18 @@ $(document).ready(function(){
 	var content = templates.list.render({stories:stories, formatDate:formatDate});
 	$('#content').html(content);
 	$('.list .story .thumb').dropShadow();
+	$('.list .story').each(function(){
+	    var s = $(this);
+	    $(this).find('a').each(function(){
+		var link = $(this).attr('href');
+		s.click(function(){
+		    window.location = link;
+		});
+	    })
+	    $(this).click(function(){
+
+	    });
+	})
     }
 
     function getStoryKey(){

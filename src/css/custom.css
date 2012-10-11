@@ -6,12 +6,11 @@ a{
 body{
 	font:arial,sans-serif;
 }
-
-
 .list{
 	display:table;
 }
 .list .story{
+      cursor:pointer;
       display:table-row;
       color:#555555;
       margin-bottom:1em;
@@ -26,7 +25,20 @@ body{
 }
 
 .list h3{
+      font-size:16px ;
+      font-weight:bold;
+      color:#ffffff;
       padding:0px;
       margin:0px;
 }
 
+.list .story .categories{
+      padding-bottom:1em;
+      font-size:14px;	
+      color:#444444;
+}
+
+.list .story .date-info{
+      font-size:14px;
+      color:#444444;
+}
