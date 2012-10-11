@@ -1,10 +1,12 @@
 a{
-      color:#0080BB;
+      color:#036dbe;
       text-decoration:none;      
 }
 
 body{
 	font:arial,sans-serif;
+	color:#444444;
+	font-size:14px;
 }
 .list{
 	display:table;
@@ -34,11 +36,106 @@ body{
 
 .list .story .categories{
       padding-bottom:1em;
-      font-size:14px;	
-      color:#444444;
 }
 
-.list .story .date-info{
-      font-size:14px;
-      color:#444444;
+
+/* Begin story-view styling */
+.story-view{
+	padding:5px;
+}
+.story-view h2{
+       font-size:24px;
+       font-weight:bold;
+       padding:0px;
+       margin:0px;
+}
+
+.breadcrumbs{
+	font-weigt:bold;
+	font-size:11px;
+	color:#036dbe;
+	border-top:1px solid #cdcdcd;
+	border-bottom:1px solid #cdcdcd;
+}
+
+.story-view .date-info{
+	    font-size:11px;
+}
+
+.photo-wrapper{
+	position:relative;
+	width:260px;
+}
+.photo-wrapper .photo-credit{
+       position:absolute;
+       bottom:5px;
+       right:3px;
+       color:#000000;
+       background:#ffffff;
+       opacity:.6;
+}
+
+.photo-credit.thin-view{
+	color:#898989;
+	margin-top:5px;
+}
+.social{
+	padding:5px;
+	margin:0px;
+}
+
+.social li{
+	display: inline;
+	list-style-type: none;
+	height:20px;
+}
+.social .icon{
+	 height: 20px;
+	 width: 20px;
+	 position: relative;
+	 top:2px; /*to align vertically*/
+	 display: inline-block;
+	 overflow: hidden;
+	background-image: url('../img/uidevtest-sprites.png');
+	background-position: 0px 0px;
+}
+
+.social.wide-view > li .icon{
+	background-image: url('../img/uidevtest-sprites-gray.png');
+}
+.social.wide-view > li:hover .icon{
+	background-image: url('../img/uidevtest-sprites.png');
+}
+
+.social .share .icon{
+	background-position: -20px 0px;
+}
+.social .favorite .icon{
+	background-position: -40px 0px;
+}
+.social .vote .icon{
+	background-position: -60px 0px;
+}
+
+.social {
+	font-size:11px;
+	font-weight:bold;	
+	color:#036dbe;
+}
+
+.story-main, .photo-caption{
+	line-height:18px;
+}
+
+/* wide view layout changing */
+.dynamic-table, .table{
+	display:table;
+}
+.dynamic-row, .row{
+	display:table-row;
+}
+.dynamic-cell, .cell{
+      vertical-align:top;
+      display:table-cell;
+      padding:15px;
 }

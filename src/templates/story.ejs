@@ -1,1 +1,65 @@
-Story
+<div class="story-view">
+  <div class="breadcrumbs">
+    <a href="./">Home &gt;</a> 
+    <a href="./?category=<%=story.categories_name[0]%>"><%=story.categories_name[0]%></a>
+  </div>
+  <div class="date-info thin-view">
+    Updated: <%=formatDate(story.updated)%> | Posted: <%=formatDate(story.pub_date)%>
+  </div>
+  <h2><%=story.title%></h2>
+  <div class="social thin-view">
+    <li class="comment"><span class="icon"></span>COMMENT</li>
+    <li class="share"><span class="icon"></span>SHARE</li>
+    <li class="favorite"><span class="icon"></span>FAVORITE</li>
+    <li class="vote"><span class="icon"></span>VOTE</li>
+  </div>
+
+  <div class="date-info wide-view">
+    Updated: <%=formatDate(story.updated)%> | Posted: <%=formatDate(story.pub_date)%>
+  </div>
+  <div class="two-main-sections wide-view-is-table"><!--photo-region and text-content-->
+    <div class="wide-view-is-row">
+      <div class="photo-region" "wide-view-is-cell">
+	<div class="photo-wrapper">
+	  <img class="photo shadow" src="<%=story.lead_photo_image_url%>" width="260">
+	  <div class="photo-credit wide-view">
+	    <%=story.lead_photo_credit%>
+	  </div>
+	</div>
+	<div class="photo-credit thin-view">
+	  <%=story.lead_photo_credit%>
+	</div>
+	<div class="photo-caption">
+	  <%=story.lead_photo_caption%>
+	</div>
+      </div>
+      <div class="text-content wide-view-is-cell">
+	<ul class="social wide-view">
+	  <li class="comment"><span class="icon"></span>COMMENT</li>
+	  <li class="share"><span class="icon"></span>SHARE</li>
+	  <li class="favorite"><span class="icon"></span>FAVORITE</li>
+	  <li class="vote"><span class="icon"></span>VOTE</li>
+	</ul>
+	<div class="story-main">
+	  <div class="author">
+	    By <a><%=story.author.join('</a>, <a>')%></a> <!-- no author urls provided -->
+	  </div>
+	  <div class="story-1-column thin-view">
+	    <%=story.story%>
+	  </div>
+	  <div class="story-2-column wide-view table">
+	    <div class="row">
+	      <% storySplit = columnSplit(story.story); %>
+	      <div class="cell">
+		<%=storySplit[0]%>
+	      </div>
+	      <div class="cell">
+		<%=storySplit[1]%>
+	      </div>
+	    </div>
+	  </div>
+	</div>
+      </div>
+    </div>
+  </div>
+</div>
