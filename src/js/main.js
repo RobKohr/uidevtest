@@ -33,7 +33,7 @@ $(document).ready(function(){
 	    first += paragraphs[i];
 	}
 	for(var i = i; i<paragraphs.length; i++){
-	    second+=paragraphs[i];
+	    second+='</p>'+paragraphs[i];
 	}
 	second+='</p>';
 	return [first, second];
